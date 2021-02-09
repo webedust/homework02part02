@@ -2,7 +2,7 @@ package edu.isu.cs.cs2263.hw02;
 
 import java.util.StringTokenizer;
 
-public class StringTokenizerAdapted extends StringTokenizer implements PushbackTokenizer
+public class StringTokenizerWithPushback extends StringTokenizer implements PushbackTokenizer
 {
     // Variables
     // Tracks how many times nextToken() was called for pushback to function.
@@ -15,7 +15,7 @@ public class StringTokenizerAdapted extends StringTokenizer implements PushbackT
     private StringTokenizer internal;
 
 
-    public StringTokenizerAdapted(String str, String delim, boolean returnDelims)
+    public StringTokenizerWithPushback(String str, String delim, boolean returnDelims)
     {
         super(str, delim, returnDelims);
         this.str = str;
@@ -41,7 +41,7 @@ public class StringTokenizerAdapted extends StringTokenizer implements PushbackT
     public void pushback()
     {
         // Replace internal with new StringTokenizer
-        internal = new StringTokenizerAdapted(str, delim, returnDelims);
+        internal = new StringTokenizerWithPushback(str, delim, returnDelims);
 
         // Decrease timesNextCalled to reflect pushback
         timesNextCalled -= 1;
