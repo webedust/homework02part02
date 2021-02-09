@@ -3,8 +3,10 @@
  */
 package edu.isu.cs.cs2263.hw02;
 
-public class Library {
-    public boolean someLibraryMethod() {
+public class Library
+{
+    public boolean someLibraryMethod()
+    {
         return true;
     }
 }
